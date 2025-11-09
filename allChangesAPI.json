@@ -1,0 +1,281 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Laravel",
+        "version": "0.0.1",
+        "description": "Notice that Almost everything is documented with only exception being RegularModelNonResource Endpoint"
+    },
+    "servers": [
+        {
+            "url": "http:\/\/localhost:8000\/api"
+        }
+    ],
+    "paths": {
+        "\/eloquentModelNonResource": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#\/components\/schemas\/EloquentModel"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/eloquentModelResource": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Array of `EloquentModelResource`",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/EloquentModelResource"
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/regularModelNonResource": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/regularModelResource": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Array of `RegularModelResource`",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/RegularModelResource"
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/dataObjectNonResource": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "`SomeDataObject`",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/SomeDataObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/dataObjectResource": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "`DataObjectResource`",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/DataObjectResource"
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DataObjectResource": {
+                "type": "object",
+                "properties": {
+                    "someString": {
+                        "type": "string"
+                    },
+                    "someInt": {
+                        "type": "integer"
+                    },
+                    "someDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "someString",
+                    "someInt",
+                    "someDate"
+                ],
+                "title": "DataObjectResource"
+            },
+            "EloquentModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "someString": {
+                        "type": "string"
+                    },
+                    "someNumber": {
+                        "type": "integer"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "id",
+                    "someString",
+                    "someNumber",
+                    "updated_at",
+                    "created_at"
+                ],
+                "title": "EloquentModel"
+            },
+            "EloquentModelResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "someString": {
+                        "type": "string"
+                    },
+                    "someNumber": {
+                        "type": "integer"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "id",
+                    "someString",
+                    "someNumber",
+                    "updated_at",
+                    "created_at"
+                ],
+                "title": "EloquentModelResource"
+            },
+            "RegularModelResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "someString": {
+                        "type": "string"
+                    },
+                    "someNumber": {
+                        "type": "integer"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "id",
+                    "someString",
+                    "someNumber",
+                    "updated_at",
+                    "created_at"
+                ],
+                "title": "RegularModelResource"
+            },
+            "SomeDataObject": {
+                "type": "object",
+                "properties": {
+                    "someString": {
+                        "type": "string"
+                    },
+                    "someInt": {
+                        "type": "integer"
+                    },
+                    "someDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "someString",
+                    "someInt",
+                    "someDate"
+                ],
+                "title": "SomeDataObject"
+            }
+        }
+    }
+}
