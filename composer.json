@@ -89,8 +89,8 @@
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "path",
-            "url": "/Volumes/Data/Projects/Private/PHP/scramble"
+            "type": "github",
+            "url": "https://github.com/klAvAx/scramble.git"
         }
     ]
 }
